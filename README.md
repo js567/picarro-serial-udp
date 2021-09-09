@@ -19,5 +19,3 @@ TO EDIT AUTOMATIC STARTUP FILE
 3. Edit .py file 
 4. pyinstaller picarro_serial_udp.py
 5. .exe file can be found in 'dist' folder in same directory
-
-Currently set up to 
