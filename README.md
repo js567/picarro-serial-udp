@@ -1,5 +1,5 @@
 # picarro-serial-udp
-Simple Python script for converting serial from Picarro gas composition sensor to UDP for network data transfer
+Simple script for transferring serial data from Picarro gas composition sensor over UDP
 
 ## To set up for RCRV:
 
