@@ -11,6 +11,10 @@ import logging
 import time
 import datetime
 
+logging.basicConfig(encoding='utf-8', level=logging.DEBUG)
+
+logging.info("PICARRO SERIAL-UDP TRANSFER INITIATED")
+
 # Setup socket for UDP transfer
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -25,8 +29,9 @@ while True:
         ser = serial.Serial("COM2", 19200, timeout=5)
         break
 
-    except SerialExeption:
+    except serial.SerialException:
 
+        logging.warning("No serial connection established: will try to connect in 10 seconds")
         time.sleep(10)
 
 
@@ -37,6 +42,8 @@ while True:
         s = ser.readline()
 
         if len(s) <= 1:
+
+            logging.warning("No data currently available: will check again in 10 seconds")
             time.sleep(10)
 
         elif len(s) > 1:
@@ -48,9 +55,9 @@ while True:
             print("Done")
 
     except KeyboardInterrupt:
-        logging.warning("Program stopped")
+        logging.error("Program stopped")
         break
 
     except Exception as e:
-        logging.exception("Exception occurred")
+        logging.error("Exception occurred")
         break
