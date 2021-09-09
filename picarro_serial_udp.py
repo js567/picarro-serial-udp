@@ -18,15 +18,27 @@ sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 
 
 # Setup serial port on Picarro
-ser = serial.Serial("COM2", 19200, timeout=5)
+while True:
+
+    try:
+
+        ser = serial.Serial("COM2", 19200, timeout=5)
+        break
+
+    except SerialExeption:
+
+        time.sleep(10)
+
 
 while True:
 
     try:
 
         s = ser.readline()
+
         if len(s) <= 1:
             time.sleep(10)
+
         elif len(s) > 1:
             timestamp = datetime.datetime.now()
             s = str(timestamp) + ' ' + str(s)
