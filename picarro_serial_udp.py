@@ -9,6 +9,12 @@ Consult the README for more information
 
 """
 
+print("---USE THIS TERMINAL TO START SERIAL-UDP TRANSFER---")
+print('')
+print("This script loads automatically on startup - if it crashes, restart it on the desktop - picarro_serial_udp.exe")
+print('')
+input("Press enter after the machine is stable to start transfer: ")
+
 import serial
 import socket
 import logging
@@ -16,12 +22,6 @@ import time
 import datetime
 
 logging.basicConfig(encoding='utf-8', level=logging.DEBUG)
-
-print("---USE THIS TERMINAL TO START SERIAL-UDP TRANSFER---")
-print('')
-print("This script loads automatically on startup - if it crashes, restart it on the desktop - picarro_serial_udp.exe")
-print('')
-input("Press enter after the machine is stable to start transfer: ")
 
 logging.info("PICARRO SERIAL-UDP TRANSFER INITIATED")
 
