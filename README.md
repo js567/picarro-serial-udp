@@ -19,3 +19,8 @@ TO EDIT AUTOMATIC STARTUP FILE
 3. Edit .py file 
 4. pyinstaller picarro_serial_udp.py
 5. .exe file can be found in 'dist' folder in same directory
+
+# NOTE:
+Windows defender is flagging most install attempts as malware. To get around this, take the 
+original .py file and recompile it on your own device using pyinstaller. The command to run is:
+pyinstaller -F picarro_serial_udp.py
