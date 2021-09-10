@@ -18,8 +18,10 @@ import datetime
 logging.basicConfig(encoding='utf-8', level=logging.DEBUG)
 
 print("---USE THIS TERMINAL TO START SERIAL-UDP TRANSFER---")
-print("this script loads automatically on startup - if it crashes, restart it on the desktop")
-input("press enter when the machine has stabilized to begin transfer: ")
+print('')
+print("This script loads automatically on startup - if it crashes, restart it on the desktop - picarro_serial_udp.exe")
+print('')
+input("Press enter after the machine is stable to start transfer: ")
 
 logging.info("PICARRO SERIAL-UDP TRANSFER INITIATED")
 
