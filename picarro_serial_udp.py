@@ -17,13 +17,16 @@ import datetime
 
 logging.basicConfig(encoding='utf-8', level=logging.DEBUG)
 
+print("---USE THIS TERMINAL TO START SERIAL-UDP TRANSFER---")
+print("this script loads automatically on startup - if it crashes, restart it on the desktop")
+input("press enter when the machine has stabilized to begin transfer: ")
+
 logging.info("PICARRO SERIAL-UDP TRANSFER INITIATED")
 
 # Setup socket for UDP transfer
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-
 
 # Setup serial port on Picarro
 while True:
