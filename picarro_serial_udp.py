@@ -5,6 +5,7 @@ Jack Stevenson 2021
 
 This script is used to transfer the serial data from the Picarro gas analyzer over UDP to OpenRVDAS
 It is meant to be run as a compiled .exe file in the Startup folder of a Windows machine
+
 Consult the README for more information
 
 """

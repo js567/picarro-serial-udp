@@ -1,6 +1,12 @@
 # picarro-serial-udp
 Simple script for transferring serial data from Picarro gas composition sensor over UDP
 
+# NOTE:
+Windows Defender is flagging some install attempts as malware. There are at least two ways to get around this:
+A. Just run the .py file from terminal or IDE and start it manually each time (safer and recommended option)
+B. Take the original .py file and recompile it on your own device using pyinstaller. The command to run is:
+   pyinstaller -F picarro_serial_udp.py
+
 ## To set up for RCRV:
 
 1. Attach a null modem 9-pin serial cable to the back of the Picarro analyzer between the COM1 and COM2 ports
@@ -19,8 +25,3 @@ TO EDIT AUTOMATIC STARTUP FILE
 3. Edit .py file 
 4. pyinstaller picarro_serial_udp.py
 5. .exe file can be found in 'dist' folder in same directory
-
-# NOTE:
-Windows defender is flagging most install attempts as malware. To get around this, take the 
-original .py file and recompile it on your own device using pyinstaller. The command to run is:
-pyinstaller -F picarro_serial_udp.py
